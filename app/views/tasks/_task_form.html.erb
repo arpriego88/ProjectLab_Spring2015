@@ -7,7 +7,14 @@
 		  <%= f.text_area :description, class: 'form-control'  %>
 
 		  <%= f.label :due_date %> 
-			<%= f.datetime_select :due_date, class: 'form-control'  %>			  
+			<%= f.datetime_select :due_date, class: 'form-control'  %> <br>
+
+			<%= f.select :priority, Task.priorities.keys %>
+
+			<%= f.label :complete %>
+			<%= f.label :complete do %>
+	    <%= f.check_box :complete %>
+	    <% end %>		 <br> 
 
 		  <%= f.submit "Submit", class: "btn submit-btn"  %>
 		<% end %>
